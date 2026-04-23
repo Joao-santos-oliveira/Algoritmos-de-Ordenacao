@@ -5,7 +5,7 @@ enum {
     ESCOLHER_EM_EXECUCAO = 0,
     RADIX_SORT,
     COUNTING_SORT,
-    PIGEONHOLE_SORT,
+    INTRO_SORT,
     TODOS,
 };
 

@@ -50,7 +50,7 @@ void obter_nome_input(int input, char* nome_input){
 void obter_algoritmo_usado(int algoritmo, int* algoritmo_usado) {
     if (algoritmo == ESCOLHER_EM_EXECUCAO) {
         do {
-            printf("\n Escolha o algoritmo:\n1. Radix\n2. Counting\n3. Pigeonhole\n4. Todos\nResposta: ");
+            printf("\n Escolha o algoritmo:\n1. Radix\n2. Counting\n3. intro Sort\n4. Todos\nResposta: ");
             scanf("%d", &algoritmo);
             getchar();
             if (algoritmo < 1 || algoritmo > 4)
@@ -98,7 +98,7 @@ void criar_output(problema* prob, double* lista_tempos){
     switch (nome_algoritmo) {
         case RADIX_SORT: strcpy(nome_algoritmo_str, "Radix Sort"); break;
         case COUNTING_SORT: strcpy(nome_algoritmo_str, "Counting Sort"); break;
-        case PIGEONHOLE_SORT: strcpy(nome_algoritmo_str, "Pigeonhole Sort"); break;
+        case INTRO_SORT: strcpy(nome_algoritmo_str, "introsort Sort"); break;
     }
 
     char nome_arquivo[100] = "outputs/output";

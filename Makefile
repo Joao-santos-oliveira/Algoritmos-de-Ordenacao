@@ -33,11 +33,11 @@ c:
 	$(MKDIR) $(DIR_OUT)
 	gcc $(DIR_C)/*.c \
 	    $(DIR_C)/counting/*.c \
-	    $(DIR_C)/pigeonhole/*.c \
+	    $(DIR_C)/introsort/*.c \
 	    $(DIR_C)/radix/*.c \
 	    -I$(DIR_C) \
 	    -I$(DIR_C)/counting \
-	    -I$(DIR_C)/pigeonhole \
+	    -I$(DIR_C)/introsort \
 	    -I$(DIR_C)/radix \
 	    -o $(BIN_C)
 	@echo "✔ C compilado -> $(BIN_C)"
@@ -50,11 +50,11 @@ cpp:
 	$(MKDIR) $(DIR_OUT)
 	g++ $(DIR_CPP)/*.cpp \
 	    $(DIR_CPP)/counting/*.cpp \
-	    $(DIR_CPP)/pigeonhole/*.cpp \
+	    $(DIR_CPP)/introsort/*.cpp \
 	    $(DIR_CPP)/radix/*.cpp \
 	    -I$(DIR_CPP) \
 	    -I$(DIR_CPP)/counting \
-	    -I$(DIR_CPP)/pigeonhole \
+	    -I$(DIR_CPP)/introsort \
 	    -I$(DIR_CPP)/radix \
 	    -o $(BIN_CPP)
 	@echo "✔ C++ compilado -> $(BIN_CPP)"
