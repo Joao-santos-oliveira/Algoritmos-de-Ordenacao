@@ -104,7 +104,7 @@ void criar_output(problema* prob, double* lista_tempos){
     char nome_arquivo[100] = "outputs/output";
     char tempo[20];
     
-    sprintf(tempo, "%ld", clock());
+    sprintf(tempo, "%ld", time(NULL));
 
     strcat(nome_arquivo, tempo);
     strcat(nome_arquivo, ".dat");
