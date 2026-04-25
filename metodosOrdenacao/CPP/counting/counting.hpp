@@ -1,6 +1,8 @@
 #ifndef COUNTING_H
 #define COUNTING_H
 
-void counting_sort(int* lista, int tamanho);
+#include <vector>
+
+void counting_sort(vector<int> list);
 
 #endif /* COUNTING_H */

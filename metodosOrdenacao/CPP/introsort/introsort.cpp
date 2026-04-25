@@ -1,7 +1,8 @@
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
-void intro_sort(int* lista, int tamanho){
+void intro_sort(vector<int> list){
     
 }

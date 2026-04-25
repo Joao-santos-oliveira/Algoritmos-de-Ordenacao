@@ -1,6 +1,8 @@
 #ifndef INTROSORT_H
 #define INTROSORT_H
 
-void intro_sort(int* lista, int tamanho);
+#include <vector>
+
+void intro_sort(vector<int> list);
 
 #endif /* INTROSORT_H */
