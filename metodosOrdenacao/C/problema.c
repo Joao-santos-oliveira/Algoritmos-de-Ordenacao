@@ -125,3 +125,9 @@ void criar_output(problema* prob, double* lista_tempos){
     
     fclose(file);
 }
+
+void exibir_lista(int* lista, int tamanho){
+    for(int i = 0; i < tamanho; i++){
+        printf("%d, ", lista[i]);
+    }
+}

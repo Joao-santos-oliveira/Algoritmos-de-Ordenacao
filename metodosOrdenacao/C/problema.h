@@ -37,4 +37,6 @@ problema* criar_problema(int input, int algoritmo, int quantidade_execucoes);
 
 void criar_output(problema* prob, double* lista_tempos);
 
+void exibir_lista(int* lista, int tamanho);
+
 #endif /* PROBLEMA_H */
