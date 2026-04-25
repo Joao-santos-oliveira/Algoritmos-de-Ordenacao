@@ -23,20 +23,24 @@
 
 void executar_algoritmo(problema* prob, void (*func_algoritmo) (int*, int)){
     double* lista_tempos = (double*) malloc(sizeof(double) * prob->quantidade_execucoes);
-    int* lista = prob->lista;
+    int* lista_principal = prob->lista;
     int tamanho = prob->tamanho;
 
+    int* lista_secundaria = (int *) malloc(sizeof(int) * tamanho);
     for(int i = 0; i < prob->quantidade_execucoes; i++){
         if (EXIBIR_INFORMAÇÕES) printf("\nExecução %d em andamento...\n", i + 1);
         clock_t start = clock();
-        func_algoritmo(lista, tamanho);
+        func_algoritmo(lista_secundaria, tamanho);
         clock_t end = clock();
         lista_tempos[i] = (double)(end - start) / CLOCKS_PER_SEC;
         if (EXIBIR_INFORMAÇÕES) printf("Execução %d concluída. Tempo gasto: %lf segundos.\n", i + 1, lista_tempos[i]);
+        
+        memcpy(lista_secundaria, lista_principal, sizeof(int) * tamanho);
     };
 
     criar_output(prob, lista_tempos);
     free(lista_tempos);
+    free(lista_secundaria);
 }
 
 int main(){
