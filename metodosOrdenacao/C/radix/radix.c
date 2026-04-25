@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "radix.h"
+#include "problema.h"
 
 #define IMPRIMIR_LISTA 0
 
@@ -42,25 +43,15 @@ void radix_sort(int* lista, int tamanho){
     int maior_valor = adquirir_maior_valor(lista, tamanho);
     int expo = 1;
 
-    if (IMPRIMIR_LISTA){
-        printf("Lista Inicial: ");
-        for(int i = 0; i < tamanho; i++){
-            printf("%d, ", lista[i]);
-        }
-    }
+    if (IMPRIMIR_LISTA) exibir_lista(lista, tamanho);
 
     while (maior_valor / expo > 0){
         counting_sort_simplificado(lista, lista_auxiliar, tamanho, expo);
-
         expo *= 10;
     }
 
-    if (IMPRIMIR_LISTA){
-        printf("Lista Final: ");
-        for(int i = 0; i < tamanho; i++){
-            printf("%d, ", lista[i]);
-        }
-    }
+    if (IMPRIMIR_LISTA) {printf("Lista Organizada: "); exibir_lista(lista, tamanho);}
+    
 
     free(lista_auxiliar);
 }
