@@ -122,7 +122,7 @@ void criar_output(problema* prob, vector<double> lista_tempos){
     file.close();
 }
 
-void exibir_lista(vector<int> lista){
+void exibir_lista(vector<int> &lista){
     for (int valor : lista){
         cout << valor << " ";
     }

@@ -40,6 +40,6 @@ problema* criar_problema(int input, int algoritmo, int quantidade_execucoes);
 
 void criar_output(problema* prob, vector<double> lista_tempos);
 
-void exibir_lista(vector<int> lista);
+void exibir_lista(vector<int> &lista);
 
 #endif /* PROBLEMA_HPP*/
