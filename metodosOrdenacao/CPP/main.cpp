@@ -34,7 +34,7 @@ void executar_algoritmo(problema* prob, function<void(vector<int>)> func_algorit
         func_algoritmo(prob->lista);
         auto end = chrono::high_resolution_clock::now();
 
-        auto duracao = chrono::duration_cast<chrono::seconds>(end - start);
+        auto duracao = chrono::duration_cast<chrono::milliseconds>(end - start)/1000.0;
         lista_tempos[i] = duracao.count();
         
         if (EXIBIR_INFORMAÇÕES) cout << "Execução "<< i + 1 <<" concluída. Tempo gasto: "<< lista_tempos[i] << " segundos." << endl;
