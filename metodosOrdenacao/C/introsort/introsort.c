@@ -66,7 +66,6 @@ int partition(int* lista, int inicio, int fim) {
     return i + 1;
 }
 
-// 🚀 núcleo do introsort
 void introsort_util(int* lista, int inicio, int fim, int depth_limit) {
     int tamanho = fim - inicio + 1;
 
