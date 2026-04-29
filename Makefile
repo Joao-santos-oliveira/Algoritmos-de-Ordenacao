@@ -39,7 +39,7 @@ c:
 	    -I$(DIR_C)/counting \
 	    -I$(DIR_C)/introsort \
 	    -I$(DIR_C)/radix \
-	    -o $(BIN_C)
+	    -o $(BIN_C) -lm
 	@echo "✔ C compilado -> $(BIN_C)"
 
 c_run: c
