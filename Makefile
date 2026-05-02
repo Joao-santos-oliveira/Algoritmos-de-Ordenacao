@@ -25,7 +25,7 @@ DIR_OUT     = builds
 BIN_C       = $(DIR_OUT)/main_c$(EXT)
 BIN_CPP     = $(DIR_OUT)/main_cpp$(EXT)
 BIN_GO      = $(DIR_OUT)/main_go$(EXT)
-BIN_HS      = $(DIR_OUT)/main_hs$(EXT)
+BIN_HS 		= $(DIR_OUT)/HASKELL$(EXT)
 BIN_RS      = $(DIR_OUT)/main_rs$(EXT)
 
 # ─── C ───────────────────────────────────────────────────────────────────────
@@ -74,7 +74,7 @@ go_run: go
 # ─── HASKELL ─────────────────────────────────────────────────────────────────
 hs:
 	$(MKDIR) $(DIR_OUT)
-	ghc $(DIR_HS)/*.hs -o $(BIN_HS)
+	cd $(DIR_HS) && cabal install --installdir=../../$(DIR_OUT) --overwrite-policy=always
 	@echo "✔ Haskell compilado -> $(BIN_HS)"
 
 hs_run: hs
