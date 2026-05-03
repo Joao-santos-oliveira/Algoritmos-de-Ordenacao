@@ -6,7 +6,8 @@ void counting_sort(int* lista, int tamanho){
 
     int maior_valor = adquirir_maior_valor_c(lista, tamanho);
 
-    int count[maior_valor+1];
+    int* count = malloc((maior_valor+1) * sizeof(int));
+
     for (int i = 0; i < maior_valor + 1; i++){
         count[i] = 0;
     }
@@ -17,7 +18,7 @@ void counting_sort(int* lista, int tamanho){
         count[i] += count[i-1];
     }
 
-    int aux[tamanho];
+    int* aux = malloc(tamanho * sizeof(int));
 
     for(int i = tamanho-1; i > -1; i--){
         int valor = lista[i];
@@ -27,7 +28,9 @@ void counting_sort(int* lista, int tamanho){
     for(int i = 0; i <tamanho; i++){
         lista[i] = aux[i];
     }
-    
+
+    free(count);
+    free(aux);
 
 }
 
