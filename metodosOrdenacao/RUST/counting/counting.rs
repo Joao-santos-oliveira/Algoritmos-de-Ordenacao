@@ -1,4 +1,6 @@
-pub fn counting_sort(lista: &mut [i32]) {
+pub fn counting_sort(lista: &[i32]) -> Vec<i32> {
+
+    let mut lista_copia = lista.to_vec();
 
     let tamanho: usize = lista.len();
     let maior_valor: i32 = adquirir_maior_valor(lista);
@@ -19,9 +21,10 @@ pub fn counting_sort(lista: &mut [i32]) {
         count[valor as usize] -= 1;
     }
     for i in 0..tamanho {
-        lista[i] = aux[i];
+        lista_copia[i] = aux[i];
     }
 
+    return lista_copia;
 }
 
 fn adquirir_maior_valor(lista: &[i32]) -> i32{
