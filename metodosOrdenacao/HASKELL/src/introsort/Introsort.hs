@@ -1,45 +1,97 @@
 module Introsort.Introsort where
 
-import Data.List (partition)
+import qualified Data.Vector.Unboxed         as V
+import qualified Data.Vector.Unboxed.Mutable as MV
+import Control.Monad (when)
+import Control.Monad.ST (runST, ST)
+import Data.Bits (shiftR)
+
 
 introSort :: [Int] -> [Int]
-introSort xs = introsort xs (2 * floor (logBase 2 (fromIntegral (length xs) :: Double)))
+introSort xs = runST $ do
+    v <- V.thaw (V.fromList xs)          
+    let n = MV.length v
+    introsort v 0 (n - 1) (2 * log2 n)  
+    sorted <- V.freeze v                 
+    return (V.toList sorted)
 
-introsort :: [Int] -> Int -> [Int]
-introsort xs depth
-  | length xs < 16 = insertion xs
-  | depth == 0     = heapSort xs
-  | otherwise      =
-      let (l, r) = partition (<= pivot) rest
-      in introsort l (depth - 1) ++ [pivot] ++ introsort r (depth - 1)
+log2 :: Int -> Int
+log2 n = go n 0
   where
-    pivot = head xs
-    rest  = tail xs
+    go 0 acc = acc
+    go x acc = go (x `shiftR` 1) (acc + 1)
 
--- insertion sort
-insertion :: [Int] -> [Int]
-insertion = foldr ins []
+
+introsort :: MV.MVector s Int -> Int -> Int -> Int -> ST s ()
+introsort v lo hi depth
+    | hi - lo + 1 < 16 = insertionSort v lo hi
+    | depth == 0        = heapSort v lo hi
+    | otherwise         = do
+        p <- partition v lo hi
+        introsort v lo       (p - 1) (depth - 1)
+        introsort v (p + 1)  hi      (depth - 1)
+
+
+insertionSort :: MV.MVector s Int -> Int -> Int -> ST s ()
+insertionSort v lo hi =
+    mapM_ insertOne [lo + 1 .. hi]
   where
-    ins x [] = [x]
-    ins x (y:ys)
-      | x <= y    = x:y:ys
-      | otherwise = y : ins x ys
+    insertOne i = do
+        key <- MV.read v i
+        go key (i - 1)
+      where
+        go key j
+            | j < lo    = MV.write v (j + 1) key
+            | otherwise = do
+                vj <- MV.read v j
+                if vj > key
+                    then do
+                        MV.write v (j + 1) vj
+                        go key (j - 1)
+                    else MV.write v (j + 1) key
 
--- heap sort simplificado (didático)
-heapSort :: [Int] -> [Int]
-heapSort [] = []
-heapSort xs =
-  let m = maximum xs
-  in heapSort (remove m xs) ++ [m]
 
-remove :: Eq a => a -> [a] -> [a]
-remove _ [] = []
-remove x (y:ys)
-  | x == y    = ys
-  | otherwise = y : remove x ys
+partition :: MV.MVector s Int -> Int -> Int -> ST s Int
+partition v lo hi = do
+    pivot <- MV.read v hi
+    let go i j
+          | j >= hi   = do MV.swap v (i + 1) hi
+                           return (i + 1)
+          | otherwise = do
+              vj <- MV.read v j
+              if vj <= pivot
+                  then do MV.swap v (i + 1) j
+                          go (i + 1) (j + 1)
+                  else go i (j + 1)
+    go (lo - 1) lo
 
-main :: IO ()
-main = do
-    let lista = [42, 7, 19, 3, 88, 15, 60, 1, 34, 27]
-    putStrLn $ "Antes:  " ++ show lista
-    putStrLn $ "Depois: " ++ show (introSort lista)
+
+heapSort :: MV.MVector s Int -> Int -> Int -> ST s ()
+heapSort v lo hi = do
+    let n = hi - lo + 1
+    -- constrói o max-heap
+    mapM_ (\i -> heapify v lo n i) [n `div` 2 - 1, n `div` 2 - 2 .. 0]
+    -- extrai elementos um a um
+    mapM_ (\i -> do
+        MV.swap v lo (lo + i)
+        heapify v lo i 0
+        ) [n - 1, n - 2 .. 1]
+
+heapify :: MV.MVector s Int -> Int -> Int -> Int -> ST s ()
+heapify v off n i = do
+    let esq = 2 * i + 1
+        dir = 2 * i + 2
+    maior0 <- return i
+    maior1 <- if esq < n
+                then do a <- MV.read v (off + esq)
+                        b <- MV.read v (off + maior0)
+                        return (if a > b then esq else maior0)
+                else return maior0
+    maior2 <- if dir < n
+                then do a <- MV.read v (off + dir)
+                        b <- MV.read v (off + maior1)
+                        return (if a > b then dir else maior1)
+                else return maior1
+    when (maior2 /= i) $ do
+        MV.swap v (off + i) (off + maior2)
+        heapify v off n maior2
