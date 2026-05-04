@@ -1,5 +1,5 @@
 module Introsort.Introsort where
-
+-- Implementação do Introsort em Haskell com alteraçao no uso do vetor
 import qualified Data.Vector.Unboxed         as V
 import qualified Data.Vector.Unboxed.Mutable as MV
 import Control.Monad (when)
