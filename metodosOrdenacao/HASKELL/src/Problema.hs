@@ -4,6 +4,7 @@ import qualified Data.ByteString.Char8 as BS
 import Data.Maybe (mapMaybe)
 import Text.Printf (printf)
 import System.IO
+import Data.IORef (IORef, newIORef)
 import System.Exit (exitFailure)
 import Data.Time.Clock.POSIX (getPOSIXTime)
 import Control.Exception (catch, IOException)
@@ -45,12 +46,12 @@ inputPaths =
 -- ============================================================
 
 data Problema = Problema
-    { lista              :: [Int]
+    { lista               :: IORef [Int]
     , tamanho            :: Int
     , nomeInput          :: FilePath
     , algoritmoUsado     :: Algoritmo
     , quantidadeExecucoes :: Int
-    } deriving (Show)
+    }
 
 -- ============================================================
 -- Ler Input
@@ -181,12 +182,13 @@ obterQuantidadeExecucoes Nothing = do
 
 criarProblema :: Maybe Int -> Maybe Int -> Maybe Int -> IO Problema
 criarProblema inputOpc algOpc execOpc = do
-    caminho  <- obterNomeInput inputOpc
-    alg      <- obterAlgoritmo algOpc
+    caminho   <- obterNomeInput inputOpc
+    alg       <- obterAlgoritmo algOpc
     execucoes <- obterQuantidadeExecucoes execOpc
-    nums     <- lerInput caminho
+    nums      <- lerInput caminho
+    listaRef  <- newIORef nums          
     return Problema
-        { lista               = nums
+        { lista               = listaRef  
         , tamanho             = length nums
         , nomeInput           = caminho
         , algoritmoUsado      = alg

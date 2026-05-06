@@ -3,6 +3,7 @@ module Main where
 import Data.Time.Clock (getCurrentTime, diffUTCTime)
 import Control.DeepSeq (deepseq)
 import Data.List (sort)
+import Data.IORef (readIORef)
 
 import Problema
 
@@ -39,18 +40,17 @@ exibirInformacoes         = False
 -- Executar Algoritmo 
 -- ============================================================
 
-executarAlgoritmo :: Problema -> ([Int] -> [Int]) -> IO ()
 executarAlgoritmo prob funcAlgoritmo = do
-    let listaPrincipal = lista prob
-        qtd            = quantidadeExecucoes prob
+    let qtd = quantidadeExecucoes prob
 
-    tempos <- mapM (executarUma listaPrincipal funcAlgoritmo) [1..qtd]
+    tempos <- mapM (executarUma (lista prob) funcAlgoritmo) [1..qtd]
 
     criarOutput prob tempos
 
   where
-    executarUma listaPrincipal func i = do
-        -- força avaliação completa antes de medir (equivalente ao memcpy + deepseq)
+    executarUma listaRef func i = do
+        listaPrincipal <- readIORef listaRef   -- lê do IORef a cada iteração
+
         listaPrincipal `deepseq` return ()
 
         when exibirInformacoes $
