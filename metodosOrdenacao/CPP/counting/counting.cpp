@@ -12,21 +12,21 @@ vector<int> CountingSort::getList() {
     return this->list;
 }
 
-int CountingSort::getMaxValue() const {
+int CountingSort::getMaxValor() const {
 
-    int maxValue = list[0];
+    int maxValor = list[0];
 
     for (size_t i = 1; i < list.size(); i++) {
 
-        if (list[i] > maxValue) {
-            maxValue = list[i];
+        if (list[i] > maxValor) {
+            maxValor = list[i];
         }
     }
 
-    return maxValue;
+    return maxValor;
 }
 
-void CountingSort::buildFrequencyVector(vector<int>& count, int maxValue) const {
+void CountingSort::buildVetorFrequencia(vector<int>& count, int maxValor) const {
 
     for (size_t i = 0; i < list.size(); i++) {
         count[list[i]]++;
@@ -35,19 +35,19 @@ void CountingSort::buildFrequencyVector(vector<int>& count, int maxValue) const 
 
 void CountingSort::rebuildSortedList(const vector<int>& count) {
 
-    vector<int> frequency = count;
+    vector<int> frequencia = count;
 
-    size_t index = 0;
+    size_t indice = 0;
 
-    for (size_t value = 0; value < frequency.size(); value++) {
+    for (size_t value = 0; value < frequencia.size(); value++) {
 
-        while (frequency[value] > 0) {
+        while (frequencia[value] > 0) {
 
-            list[index] = static_cast<int>(value);
+            list[indice] = static_cast<int>(value);
 
-            index++;
+            indice++;
 
-            frequency[value]--;
+            frequencia[value]--;
         }
     }
 }
@@ -58,11 +58,11 @@ void CountingSort::sort() {
         return;
     }
 
-    int maxValue = getMaxValue();
+    int maxValor = getMaxValor();
 
-    vector<int> count(maxValue + 1, 0);
+    vector<int> count(maxValor + 1, 0);
 
-    buildFrequencyVector(count, maxValue);
+    buildVetorFrequencia(count, maxValor);
 
     rebuildSortedList(count);
 }
