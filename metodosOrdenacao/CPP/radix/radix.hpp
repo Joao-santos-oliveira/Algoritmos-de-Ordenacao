@@ -1,16 +1,21 @@
-#ifndef RADIX_H
-#define RADIX_H
+#ifndef RADIX_HPP
+#define RADIX_HPP
 
-#include <iostream>
 #include <vector>
 
-using namespace std;
+class RadixSort {
 
-int adquirir_maior_valor(vector<int> lista);
+private:
+    std::vector<int>& list;
 
-void counting_sort_simplificado(vector<int> &lista, vector<int> &lista_aux, int expo);
+    int getMaxValue() const;
 
-void radix_sort(vector<int> lista);
+public:
+    RadixSort(std::vector<int>& list);
 
+    void sort();
+};
 
-#endif /* RADIX_H */
+void radix_sort(std::vector<int> list);
+
+#endif

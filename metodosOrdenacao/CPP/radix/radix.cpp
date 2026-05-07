@@ -1,58 +1,78 @@
-#include <iostream>
 #include <vector>
+#include <algorithm>
 
 #include "radix.hpp"
-#include "problema.hpp"
-
-#define IMPRIMIR_LISTA 0
 
 using namespace std;
 
-int adquirir_maior_valor(vector<int> lista){
-    int maior = lista[0];
-    for(int valor : lista){
-        if (valor > maior) maior = valor;
+RadixSort::RadixSort(vector<int>& list)
+    : list(list) {}
+
+int RadixSort::getMaxValue() const {
+
+    int maxValue = list[0];
+
+    for (size_t i = 1; i < list.size(); i++) {
+
+        if (list[i] > maxValue) {
+            maxValue = list[i];
+        }
     }
-    return maior;
+
+    return maxValue;
 }
 
-void counting_sort_simplificado(vector<int> &lista, vector<int> &lista_aux, int expo){
-    int count[10] = {0, 0, 0, 0, 0, 0 ,0, 0, 0, 0};
-    int digito = 0;
-    int tamanho = lista.size();
+void RadixSort::sort() {
 
-    for (int i = 0; i < tamanho; i++){
-        count[(lista[i] / expo) % 10]++;
-    }
-    
-    for (int i = 1; i < 10; i++){
-        count[i] += count[i - 1];
+    if (list.empty()) {
+        return;
     }
 
-    for(int i = tamanho - 1; i >= 0; i--){
-        digito = (lista[i] / expo) % 10;
-        lista_aux[count[digito] - 1] = lista[i];
-        count[digito]--;
-    }
+    int maxValue = getMaxValue();
 
-    for(int i = 0; i < tamanho; i++){
-        lista[i] = lista_aux[i];
+    vector<int> auxiliaryList(list.size());
+
+    vector<int> count(10);
+
+    int exponent = 1;
+
+    while (maxValue / exponent > 0) {
+
+        fill(count.begin(), count.end(), 0);
+
+        for (size_t i = 0; i < list.size(); i++) {
+
+            int digit = (list[i] / exponent) % 10;
+
+            count[digit]++;
+        }
+
+        for (size_t i = 1; i < count.size(); i++) {
+
+            count[i] += count[i - 1];
+        }
+
+        for (int i = (int)list.size() - 1; i >= 0; i--) {
+
+            int digit = (list[i] / exponent) % 10;
+
+            auxiliaryList[count[digit] - 1] = list[i];
+
+            count[digit]--;
+        }
+
+        for (size_t i = 0; i < list.size(); i++) {
+
+            list[i] = auxiliaryList[i];
+        }
+
+        exponent *= 10;
     }
 }
 
-void radix_sort(vector<int> lista){
-    vector<int> lista_auxiliar(lista.size());
+void radix_sort(vector<int> list) {
 
-    int maior_valor = adquirir_maior_valor(lista);
-    
-    int expo = 1;
+    RadixSort sorter(list);
 
-    if (IMPRIMIR_LISTA) exibir_lista(lista);
-
-    while (maior_valor / expo > 0){
-        counting_sort_simplificado(lista, lista_auxiliar, expo);
-        expo *= 10;
-    }
-
-    if (IMPRIMIR_LISTA) {cout << "Lista Organizada: " << endl; exibir_lista(lista);}
+    sorter.sort();
 }
