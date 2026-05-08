@@ -1,0 +1,24 @@
+Linguagem: Haskell
+Algoritmo: Counting Sort
+Input: inputs/input2.dat
+Tempos de execução (em segundos):
+Execução 1: 1.79802e-4
+Execução 2: 1.77919e-4
+Execução 3: 1.77749e-4
+Execução 4: 2.14078e-4
+Execução 5: 1.69934e-4
+Execução 6: 1.80875e-4
+Execução 7: 2.16111e-4
+Execução 8: 1.77368e-4
+Execução 9: 1.73581e-4
+Execução 10: 2.58683e-4
+Execução 11: 1.71507e-4
+Execução 12: 1.77829e-4
+Execução 13: 1.73291e-4
+Execução 14: 1.93509e-4
+Execução 15: 1.77638e-4
+Execução 16: 2.05762e-4
+Execução 17: 1.68401e-4
+Execução 18: 1.72058e-4
+Execução 19: 1.7839e-4
+Execução 20: 2.01033e-4

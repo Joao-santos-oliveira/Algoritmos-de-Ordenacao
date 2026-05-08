@@ -1,0 +1,24 @@
+Linguagem: Haskell
+Algoritmo: Intro Sort
+Input: inputs/input1_cord.dat
+Tempos de execução (em segundos):
+Execução 1: 1.9715e-5
+Execução 2: 2.3688e-5
+Execução 3: 1.8016e-5
+Execução 4: 1.831e-5
+Execução 5: 1.5098e-5
+Execução 6: 1.7918e-5
+Execução 7: 2.2175e-5
+Execução 8: 1.7472e-5
+Execução 9: 1.5251e-5
+Execução 10: 1.7428e-5
+Execução 11: 1.7472e-5
+Execução 12: 2.3242e-5
+Execução 13: 1.5676e-5
+Execução 14: 1.807e-5
+Execução 15: 1.8092e-5
+Execução 16: 1.8191e-5
+Execução 17: 1.536e-5
+Execução 18: 2.2784e-5
+Execução 19: 3.0981e-5
+Execução 20: 1.7537e-5

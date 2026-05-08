@@ -1,0 +1,24 @@
+Linguagem: Haskell
+Algoritmo: Radix Sort
+Input: inputs/input5.dat
+Tempos de execução (em segundos):
+Execução 1: 0.14696744
+Execução 2: 0.126610794
+Execução 3: 0.126313482
+Execução 4: 0.144987081
+Execução 5: 0.129559503
+Execução 6: 0.143494513
+Execução 7: 0.125758089
+Execução 8: 0.127857872
+Execução 9: 0.144111638
+Execução 10: 0.127572601
+Execução 11: 0.144750325
+Execução 12: 0.126587193
+Execução 13: 0.126753671
+Execução 14: 0.14480589
+Execução 15: 0.12701496
+Execução 16: 0.142817378
+Execução 17: 0.127925712
+Execução 18: 0.127884119
+Execução 19: 0.144443911
+Execução 20: 0.125905224

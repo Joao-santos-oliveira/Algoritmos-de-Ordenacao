@@ -1,0 +1,24 @@
+Linguagem: RUST
+Algoritmo: Counting Sort
+Input: inputs/input2_dord.dat
+Tempos de execução (em segundos):
+Execução 0: 0.000145537
+Execução 1: 0.000007114
+Execução 2: 0.000007494
+Execução 3: 0.000007525
+Execução 4: 0.000007424
+Execução 5: 0.000007304
+Execução 6: 0.000007424
+Execução 7: 0.000007384
+Execução 8: 0.000007424
+Execução 9: 0.000007004
+Execução 10: 0.000007143
+Execução 11: 0.000006984
+Execução 12: 0.000007955
+Execução 13: 0.000007625
+Execução 14: 0.000007865
+Execução 15: 0.000007895
+Execução 16: 0.000007775
+Execução 17: 0.000007394
+Execução 18: 0.000006653
+Execução 19: 0.000007384

@@ -1,0 +1,24 @@
+Linguagem: Haskell
+Algoritmo: Intro Sort
+Input: inputs/input5_dord.dat
+Tempos de execução (em segundos):
+Execução 1: 0.301726354
+Execução 2: 0.322220529
+Execução 3: 0.299708925
+Execução 4: 0.304046602
+Execução 5: 0.299296126
+Execução 6: 0.300835724
+Execução 7: 0.319580676
+Execução 8: 0.298166183
+Execução 9: 0.306326654
+Execução 10: 0.300199656
+Execução 11: 0.301327072
+Execução 12: 0.315735001
+Execução 13: 0.299683557
+Execução 14: 0.299385787
+Execução 15: 0.303588762
+Execução 16: 0.298825616
+Execução 17: 0.31779126
+Execução 18: 0.301978423
+Execução 19: 0.300144604
+Execução 20: 0.298630279

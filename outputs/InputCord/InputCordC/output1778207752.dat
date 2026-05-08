@@ -1,0 +1,24 @@
+Linguagem: C
+Algoritmo: Counting Sort
+Input: inputs/input3_cord.dat
+Tempos de execução (em segundos):
+Execução 1: 0.000247
+Execução 2: 0.000163
+Execução 3: 0.000160
+Execução 4: 0.000160
+Execução 5: 0.000158
+Execução 6: 0.000157
+Execução 7: 0.000155
+Execução 8: 0.000161
+Execução 9: 0.000156
+Execução 10: 0.000156
+Execução 11: 0.000156
+Execução 12: 0.000156
+Execução 13: 0.000156
+Execução 14: 0.000156
+Execução 15: 0.000171
+Execução 16: 0.000154
+Execução 17: 0.000154
+Execução 18: 0.000154
+Execução 19: 0.000153
+Execução 20: 0.000154

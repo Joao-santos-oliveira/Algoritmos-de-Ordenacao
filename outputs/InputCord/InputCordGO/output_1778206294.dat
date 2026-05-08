@@ -1,0 +1,23 @@
+Linguagem: GO
+Algoritmo: Counting Sort
+Input: inputs/input2_cord.dat
+Execução 1: 0.000113
+Execução 2: 0.000092
+Execução 3: 0.000083
+Execução 4: 0.000090
+Execução 5: 0.000086
+Execução 6: 0.000152
+Execução 7: 0.000096
+Execução 8: 0.000081
+Execução 9: 0.000095
+Execução 10: 0.000081
+Execução 11: 0.000086
+Execução 12: 0.000089
+Execução 13: 0.000091
+Execução 14: 0.000083
+Execução 15: 0.000109
+Execução 16: 0.000081
+Execução 17: 0.000087
+Execução 18: 0.000086
+Execução 19: 0.000080
+Execução 20: 0.000084

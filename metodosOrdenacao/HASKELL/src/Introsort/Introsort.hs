@@ -1,97 +1,151 @@
 module Introsort.Introsort where
--- Implementação do Introsort em Haskell com alteraçao no uso do vetor
+
+
 import qualified Data.Vector.Unboxed         as V
 import qualified Data.Vector.Unboxed.Mutable as MV
 import Control.Monad (when)
 import Control.Monad.ST (runST, ST)
 import Data.Bits (shiftR)
 
-
 introSort :: [Int] -> [Int]
-introSort xs = runST $ do
-    v <- V.thaw (V.fromList xs)          
-    let n = MV.length v
-    introsort v 0 (n - 1) (2 * log2 n)  
-    sorted <- V.freeze v                 
-    return (V.toList sorted)
+introSort lista = runST $ do
+    vetor <- V.thaw (V.fromList lista)
+
+    let tamanho = MV.length vetor
+
+    introsort vetor 0 (tamanho - 1) (2 * log2 tamanho)
+
+    vetorOrdenado <- V.freeze vetor
+    return (V.toList vetorOrdenado)
 
 log2 :: Int -> Int
-log2 n = go n 0
+log2 n = calcular n 0
   where
-    go 0 acc = acc
-    go x acc = go (x `shiftR` 1) (acc + 1)
-
+    calcular 0 acumulador = acumulador
+    calcular valor acumulador =
+        calcular (valor `shiftR` 1) (acumulador + 1)
 
 introsort :: MV.MVector s Int -> Int -> Int -> Int -> ST s ()
-introsort v lo hi depth
-    | hi - lo + 1 < 16 = insertionSort v lo hi
-    | depth == 0        = heapSort v lo hi
-    | otherwise         = do
-        p <- partition v lo hi
-        introsort v lo       (p - 1) (depth - 1)
-        introsort v (p + 1)  hi      (depth - 1)
+introsort vetor inicio fim profundidade
+    -- Para pequenos intervalos, usa Insertion Sort
+    | fim - inicio + 1 < 16 =
+        insertionSort vetor inicio fim
 
+    -- Se atingir profundidade máxima, usa HeapSort
+    | profundidade == 0 =
+        heapSort vetor inicio fim
+
+    -- Caso padrão: QuickSort
+    | otherwise = do
+        indicePivo <- partition vetor inicio fim
+
+        introsort vetor inicio (indicePivo - 1) (profundidade - 1)
+        introsort vetor (indicePivo + 1) fim (profundidade - 1)
 
 insertionSort :: MV.MVector s Int -> Int -> Int -> ST s ()
-insertionSort v lo hi =
-    mapM_ insertOne [lo + 1 .. hi]
+insertionSort vetor inicio fim =
+    mapM_ inserirElemento [inicio + 1 .. fim]
   where
-    insertOne i = do
-        key <- MV.read v i
-        go key (i - 1)
-      where
-        go key j
-            | j < lo    = MV.write v (j + 1) key
-            | otherwise = do
-                vj <- MV.read v j
-                if vj > key
-                    then do
-                        MV.write v (j + 1) vj
-                        go key (j - 1)
-                    else MV.write v (j + 1) key
+    inserirElemento indiceAtual = do
+        chave <- MV.read vetor indiceAtual
+        moverElementos chave (indiceAtual - 1)
 
+    moverElementos chave indice
+        | indice < inicio =
+            MV.write vetor (indice + 1) chave
+
+        | otherwise = do
+            valorAtual <- MV.read vetor indice
+
+            if valorAtual > chave
+                then do
+                    -- Move o elemento uma posição à direita
+                    MV.write vetor (indice + 1) valorAtual
+                    moverElementos chave (indice - 1)
+
+                else
+                    MV.write vetor (indice + 1) chave
 
 partition :: MV.MVector s Int -> Int -> Int -> ST s Int
-partition v lo hi = do
-    pivot <- MV.read v hi
-    let go i j
-          | j >= hi   = do MV.swap v (i + 1) hi
-                           return (i + 1)
-          | otherwise = do
-              vj <- MV.read v j
-              if vj <= pivot
-                  then do MV.swap v (i + 1) j
-                          go (i + 1) (j + 1)
-                  else go i (j + 1)
-    go (lo - 1) lo
+partition vetor inicio fim = do
+    pivo <- MV.read vetor fim
 
+    let percorrer indiceMenor indiceAtual
+            | indiceAtual >= fim = do
+                MV.swap vetor (indiceMenor + 1) fim
+                return (indiceMenor + 1)
+
+            | otherwise = do
+                valorAtual <- MV.read vetor indiceAtual
+
+                if valorAtual <= pivo
+                    then do
+                        MV.swap vetor (indiceMenor + 1) indiceAtual
+                        percorrer (indiceMenor + 1) (indiceAtual + 1)
+
+                    else
+                        percorrer indiceMenor (indiceAtual + 1)
+
+    percorrer (inicio - 1) inicio
 
 heapSort :: MV.MVector s Int -> Int -> Int -> ST s ()
-heapSort v lo hi = do
-    let n = hi - lo + 1
-    -- constrói o max-heap
-    mapM_ (\i -> heapify v lo n i) [n `div` 2 - 1, n `div` 2 - 2 .. 0]
-    -- extrai elementos um a um
-    mapM_ (\i -> do
-        MV.swap v lo (lo + i)
-        heapify v lo i 0
-        ) [n - 1, n - 2 .. 1]
+heapSort vetor inicio fim = do
+    let tamanhoHeap = fim - inicio + 1
 
+    mapM_
+        (heapify vetor inicio tamanhoHeap)
+        [tamanhoHeap `div` 2 - 1, tamanhoHeap `div` 2 - 2 .. 0]
+
+    -- Remove elementos do heap um por um
+    mapM_
+        (\indice -> do
+            MV.swap vetor inicio (inicio + indice)
+            heapify vetor inicio indice 0
+        )
+        [tamanhoHeap - 1, tamanhoHeap - 2 .. 1]
+
+-- Ajusta a propriedade do heap
 heapify :: MV.MVector s Int -> Int -> Int -> Int -> ST s ()
-heapify v off n i = do
-    let esq = 2 * i + 1
-        dir = 2 * i + 2
-    maior0 <- return i
-    maior1 <- if esq < n
-                then do a <- MV.read v (off + esq)
-                        b <- MV.read v (off + maior0)
-                        return (if a > b then esq else maior0)
-                else return maior0
-    maior2 <- if dir < n
-                then do a <- MV.read v (off + dir)
-                        b <- MV.read v (off + maior1)
-                        return (if a > b then dir else maior1)
-                else return maior1
-    when (maior2 /= i) $ do
-        MV.swap v (off + i) (off + maior2)
-        heapify v off n maior2
+heapify vetor deslocamento tamanhoHeap raiz = do
+
+    let filhoEsquerdo = 2 * raiz + 1
+        filhoDireito  = 2 * raiz + 2
+
+    let maiorInicial = raiz
+
+    maiorDepoisEsq <-
+        if filhoEsquerdo < tamanhoHeap
+            then do
+                valorEsq <- MV.read vetor (deslocamento + filhoEsquerdo)
+                valorMaior <- MV.read vetor (deslocamento + maiorInicial)
+
+                return (
+                    if valorEsq > valorMaior
+                        then filhoEsquerdo
+                        else maiorInicial
+                    )
+
+            else
+                return maiorInicial
+
+    maiorFinal <-
+        if filhoDireito < tamanhoHeap
+            then do
+                valorDir <- MV.read vetor (deslocamento + filhoDireito)
+                valorMaior <- MV.read vetor (deslocamento + maiorDepoisEsq)
+
+                return (
+                    if valorDir > valorMaior
+                        then filhoDireito
+                        else maiorDepoisEsq
+                    )
+
+            else
+                return maiorDepoisEsq
+
+    when (maiorFinal /= raiz) $ do
+        MV.swap vetor
+            (deslocamento + raiz)
+            (deslocamento + maiorFinal)
+
+        heapify vetor deslocamento tamanhoHeap maiorFinal

@@ -1,0 +1,24 @@
+Linguagem: Haskell
+Algoritmo: Radix Sort
+Input: inputs/input4_cord.dat
+Tempos de execução (em segundos):
+Execução 1: 1.7459146e-2
+Execução 2: 2.4503398e-2
+Execução 3: 1.5060488e-2
+Execução 4: 1.3471499e-2
+Execução 5: 1.3206302e-2
+Execução 6: 1.3575368e-2
+Execução 7: 1.6180275e-2
+Execução 8: 1.3436794e-2
+Execução 9: 1.3272957e-2
+Execução 10: 1.3296078e-2
+Execução 11: 1.3304851e-2
+Execução 12: 1.3390418e-2
+Execução 13: 1.396037e-2
+Execução 14: 1.7548498e-2
+Execução 15: 1.3674176e-2
+Execução 16: 1.4070315e-2
+Execução 17: 1.3643923e-2
+Execução 18: 1.4322178e-2
+Execução 19: 1.4071681e-2
+Execução 20: 1.4136343e-2

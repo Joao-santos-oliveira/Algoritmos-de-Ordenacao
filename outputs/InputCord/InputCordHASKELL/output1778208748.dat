@@ -1,0 +1,24 @@
+Linguagem: Haskell
+Algoritmo: Radix Sort
+Input: inputs/input6_cord.dat
+Tempos de execução (em segundos):
+Execução 1: 1.541058252
+Execução 2: 1.296828958
+Execução 3: 1.598581786
+Execução 4: 1.598316941
+Execução 5: 1.324701388
+Execução 6: 1.586402813
+Execução 7: 1.631821122
+Execução 8: 1.587725258
+Execução 9: 1.321138835
+Execução 10: 1.575310899
+Execução 11: 1.675772712
+Execução 12: 1.598338146
+Execução 13: 1.535464614
+Execução 14: 1.566556188
+Execução 15: 1.672722275
+Execução 16: 1.592586267
+Execução 17: 1.312151328
+Execução 18: 1.58373132
+Execução 19: 1.582016122
+Execução 20: 1.438499738

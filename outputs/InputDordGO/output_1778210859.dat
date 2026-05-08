@@ -1,0 +1,23 @@
+Linguagem: GO
+Algoritmo: Radix Sort
+Input: inputs/input3_dord.dat
+Execução 1: 0.000463
+Execução 2: 0.000448
+Execução 3: 0.000471
+Execução 4: 0.000450
+Execução 5: 0.000449
+Execução 6: 0.000482
+Execução 7: 0.000490
+Execução 8: 0.000449
+Execução 9: 0.000458
+Execução 10: 0.000970
+Execução 11: 0.000472
+Execução 12: 0.000459
+Execução 13: 0.000469
+Execução 14: 0.000490
+Execução 15: 0.000453
+Execução 16: 0.000454
+Execução 17: 0.000448
+Execução 18: 0.000477
+Execução 19: 0.000453
+Execução 20: 0.000447

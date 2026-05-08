@@ -1,0 +1,24 @@
+Linguagem: RUST
+Algoritmo: Counting Sort
+Input: inputs/input2.dat
+Tempos de execução (em segundos):
+Execução 0: 0.000068811
+Execução 1: 0.000005794
+Execução 2: 0.000005729
+Execução 3: 0.000005656
+Execução 4: 0.000005677
+Execução 5: 0.00000573
+Execução 6: 0.000005697
+Execução 7: 0.000005645
+Execução 8: 0.000005772
+Execução 9: 0.000005751
+Execução 10: 0.000005687
+Execução 11: 0.000005698
+Execução 12: 0.000005698
+Execução 13: 0.000005709
+Execução 14: 0.000005751
+Execução 15: 0.000005729
+Execução 16: 0.000005666
+Execução 17: 0.000005719
+Execução 18: 0.000005708
+Execução 19: 0.000005698

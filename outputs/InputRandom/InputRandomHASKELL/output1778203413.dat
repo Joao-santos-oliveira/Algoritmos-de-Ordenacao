@@ -1,0 +1,24 @@
+Linguagem: Haskell
+Algoritmo: Intro Sort
+Input: inputs/input1.dat
+Tempos de execução (em segundos):
+Execução 1: 1.1121e-5
+Execução 2: 1.8124e-5
+Execução 3: 1.0831e-5
+Execução 4: 9.248e-6
+Execução 5: 9.197e-6
+Execução 6: 8.917e-6
+Execução 7: 1.3306e-5
+Execução 8: 1.049e-5
+Execução 9: 6.893e-6
+Execução 10: 9.037e-6
+Execução 11: 9.097e-6
+Execução 12: 1.2955e-5
+Execução 13: 6.843e-6
+Execução 14: 8.927e-6
+Execução 15: 8.937e-6
+Execução 16: 8.867e-6
+Execução 17: 7.034e-6
+Execução 18: 1.3015e-5
+Execução 19: 9.077e-6
+Execução 20: 9.218e-6

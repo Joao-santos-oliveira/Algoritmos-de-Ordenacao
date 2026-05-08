@@ -1,0 +1,24 @@
+Linguagem: RUST
+Algoritmo: introsort Sort
+Input: inputs/input4_dord.dat
+Tempos de execução (em segundos):
+Execução 0: 0.003224303
+Execução 1: 0.003256744
+Execução 2: 0.003063016
+Execução 3: 0.003151494
+Execução 4: 0.003064589
+Execução 5: 0.00310167
+Execução 6: 0.003402302
+Execução 7: 0.003093564
+Execução 8: 0.002994606
+Execução 9: 0.003064188
+Execução 10: 0.003577015
+Execução 11: 0.003504697
+Execução 12: 0.0030234
+Execução 13: 0.002956102
+Execução 14: 0.002992502
+Execução 15: 0.002999274
+Execução 16: 0.003108102
+Execução 17: 0.00309125
+Execução 18: 0.002955521
+Execução 19: 0.002987392
