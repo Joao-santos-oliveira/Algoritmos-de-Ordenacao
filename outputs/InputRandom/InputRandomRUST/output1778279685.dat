@@ -1,0 +1,24 @@
+Linguagem: RUST
+Algoritmo: Radix Sort
+Input: inputs/input6.dat
+Tempos de execução (em segundos):
+Execução 0: 0.712560333
+Execução 1: 0.621944584
+Execução 2: 0.64861406
+Execução 3: 0.635591978
+Execução 4: 0.625539603
+Execução 5: 0.650953382
+Execução 6: 0.662777201
+Execução 7: 0.68844619
+Execução 8: 0.638774914
+Execução 9: 0.647415508
+Execução 10: 0.619601597
+Execução 11: 0.615513986
+Execução 12: 0.618044316
+Execução 13: 0.675890861
+Execução 14: 0.612969068
+Execução 15: 0.616513229
+Execução 16: 0.648836205
+Execução 17: 0.615139079
+Execução 18: 0.616419072
+Execução 19: 0.645122141
