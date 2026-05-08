@@ -1,0 +1,24 @@
+Linguagem: C++
+Algoritmo: Counting Sort
+Input: inputs/input2_cord.dat
+Tempos de execução (em segundos):
+Execução 0: 0.000154419
+Execução 1: 0.000064717
+Execução 2: 0.000063799
+Execução 3: 0.000064002
+Execução 4: 0.000060862
+Execução 5: 0.000060777
+Execução 6: 0.000060776
+Execução 7: 0.000061236
+Execução 8: 0.000060766
+Execução 9: 0.000060745
+Execução 10: 0.000060744
+Execução 11: 0.000060723
+Execução 12: 0.000060787
+Execução 13: 0.000060744
+Execução 14: 0.000060776
+Execução 15: 0.000060765
+Execução 16: 0.000066715
+Execução 17: 0.000061140
+Execução 18: 0.000061140
+Execução 19: 0.000061342

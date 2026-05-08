@@ -3,6 +3,7 @@
 #include <string>
 #include <fstream>
 #include <ctime>
+#include <iomanip>
 #include "problema.hpp"
 
 using namespace std;
@@ -115,6 +116,7 @@ void criar_output(problema* prob, vector<double> lista_tempos){
     file << "Linguagem: C++" << endl;
     file << "Algoritmo: " << nome_algoritmo_str << endl;
     file << "Input: " << nome_input << endl;
+    file << fixed << setprecision(9);
 
     file << "Tempos de execução (em segundos):" << endl;;
     for (int i = 0; i < quantidade_execucoes; file << "Execução " <<  i << ": "<< lista_tempos[i++] << endl);

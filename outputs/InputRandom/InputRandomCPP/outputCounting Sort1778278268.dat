@@ -1,0 +1,24 @@
+Linguagem: C++
+Algoritmo: Counting Sort
+Input: inputs/input2.dat
+Tempos de execução (em segundos):
+Execução 0: 0.000155752
+Execução 1: 0.000071022
+Execução 2: 0.000070894
+Execução 3: 0.000063190
+Execução 4: 0.000068322
+Execução 5: 0.000067791
+Execução 6: 0.000060352
+Execução 7: 0.000060235
+Execução 8: 0.000112521
+Execução 9: 0.000064593
+Execução 10: 0.000065538
+Execução 11: 0.000060362
+Execução 12: 0.000072776
+Execução 13: 0.000071947
+Execução 14: 0.000063572
+Execução 15: 0.000060267
+Execução 16: 0.000060224
+Execução 17: 0.000060225
+Execução 18: 0.000060204
+Execução 19: 0.000060267

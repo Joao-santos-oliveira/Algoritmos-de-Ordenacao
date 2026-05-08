@@ -1,0 +1,24 @@
+Linguagem: C++
+Algoritmo: Radix Sort
+Input: inputs/input1.dat
+Tempos de execução (em segundos):
+Execução 0: 0.000016284
+Execução 1: 0.000008367
+Execução 2: 0.000008325
+Execução 3: 0.000008293
+Execução 4: 0.000008228
+Execução 5: 0.000008271
+Execução 6: 0.000008250
+Execução 7: 0.000008249
+Execução 8: 0.000008239
+Execução 9: 0.000008228
+Execução 10: 0.000008239
+Execução 11: 0.000008228
+Execução 12: 0.000008293
+Execução 13: 0.000008261
+Execução 14: 0.000008239
+Execução 15: 0.000008239
+Execução 16: 0.000008238
+Execução 17: 0.000008196
+Execução 18: 0.000008271
+Execução 19: 0.000008239

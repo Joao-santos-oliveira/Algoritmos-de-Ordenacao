@@ -1,0 +1,24 @@
+Linguagem: C++
+Algoritmo: Radix Sort
+Input: inputs/input3_cord.dat
+Tempos de execução (em segundos):
+Execução 0: 0.000980277
+Execução 1: 0.001086256
+Execução 2: 0.001027259
+Execução 3: 0.000924217
+Execução 4: 0.000923185
+Execução 5: 0.001001538
+Execução 6: 0.000953982
+Execução 7: 0.000964549
+Execução 8: 0.000953003
+Execução 9: 0.000970242
+Execução 10: 0.000984927
+Execução 11: 0.001015585
+Execução 12: 0.000931368
+Execução 13: 0.000928697
+Execução 14: 0.001008881
+Execução 15: 0.000928549
+Execução 16: 0.000925771
+Execução 17: 0.000924196
+Execução 18: 0.000938584
+Execução 19: 0.000920961
