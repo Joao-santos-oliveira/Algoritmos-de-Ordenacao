@@ -1,21 +1,15 @@
 #ifndef RADIX_HPP
 #define RADIX_HPP
 
+#include "problema.hpp"
 #include <vector>
 
-class RadixSort {
+class RadixSort : public MetodoOrdenacao {
+    private:
+        int getMaxValue(const vector<int>& list) const;
 
-private:
-    std::vector<int>& list;
-
-    int getMaxValue() const;
-
-public:
-    RadixSort(std::vector<int>& list);
-
-    void sort();
+    public:
+        void sort(vector<int> list) override;
 };
-
-void radix_sort(std::vector<int> list);
 
 #endif

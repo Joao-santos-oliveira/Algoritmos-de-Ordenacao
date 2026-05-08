@@ -24,14 +24,14 @@
 
 using namespace std;
 
-void executar_algoritmo(problema* prob, function<void(vector<int>)> func_algoritmo){
+void executar_algoritmo(problema* prob, MetodoOrdenacao* func_algoritmo){
     vector<double> lista_tempos(prob->quantidade_execucoes);
 
     for(int i = 0; i < prob->quantidade_execucoes; i++){
         if (EXIBIR_INFORMAÇÕES) cout << "\nExecução " <<  i + 1 << " em andamento..." << endl;
         
         auto start = chrono::high_resolution_clock::now();
-        func_algoritmo(prob->lista);
+        func_algoritmo->sort(prob->lista);
         auto end = chrono::high_resolution_clock::now();
 
         auto duracao = chrono::duration_cast<chrono::milliseconds>(end - start)/1000.0;
@@ -48,21 +48,38 @@ int main(){
     srand(42);
 
     problema* problema = criar_problema(INPUT_USADO, ALGORITMO_USADO, QUANTIDADE_EXECUCOES);
+    MetodoOrdenacao* metodo_ordenacao;
 
     switch (problema->algoritmo_usado) {
-        case RADIX_SORT: executar_algoritmo(problema, radix_sort); break;
-        case COUNTING_SORT: executar_algoritmo(problema, counting_sort); break;
-        case INTRO_SORT: executar_algoritmo(problema, intro_sort); break;
-        
+        case RADIX_SORT: 
+            metodo_ordenacao = new RadixSort();
+            executar_algoritmo(problema, metodo_ordenacao);
+            break;
+
+        case COUNTING_SORT: 
+            metodo_ordenacao = new CountingSort();
+            executar_algoritmo(problema, metodo_ordenacao);
+            break;
+
+        case INTRO_SORT:
+            metodo_ordenacao = new IntroSort();
+            executar_algoritmo(problema, metodo_ordenacao);
+            break;
+
         case TODOS:
+            metodo_ordenacao = new RadixSort();
             problema->algoritmo_usado = RADIX_SORT;
-            executar_algoritmo(problema, radix_sort);
+            executar_algoritmo(problema, metodo_ordenacao);
 
+            delete metodo_ordenacao;
+            metodo_ordenacao = new CountingSort();
             problema->algoritmo_usado = COUNTING_SORT;
-            executar_algoritmo(problema, counting_sort);
+            executar_algoritmo(problema, metodo_ordenacao);
 
+            delete metodo_ordenacao;
+            metodo_ordenacao = new IntroSort();
             problema->algoritmo_usado = INTRO_SORT;
-            executar_algoritmo(problema, intro_sort);
+            executar_algoritmo(problema, metodo_ordenacao);
         break;
 
         default:
@@ -71,6 +88,7 @@ int main(){
     }
 
     printf("Algoritmos finalizados com sucesso...\n");
+    delete metodo_ordenacao;
     delete problema;
     return 0;
 

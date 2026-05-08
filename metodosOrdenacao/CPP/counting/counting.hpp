@@ -1,22 +1,18 @@
 #ifndef COUNTING_HPP
 #define COUNTING_HPP
 
+#include "problema.hpp"
 #include <vector>
 using namespace std;
-class CountingSort {
+class CountingSort : public MetodoOrdenacao {
 
 private:
-    vector<int> list;
-    int getMaxValor() const;
-    void buildVetorFrequencia(vector<int>& count, int maxValue) const;
-    void rebuildSortedList(const vector<int>& count);
+    int getMaxValor(const vector<int>& list) const;
+    void buildVetorFrequencia(vector<int>& list, vector<int>& count, int maxValue) const;
+    void rebuildSortedList(vector<int>& list, const vector<int>& count);
 
 public:
-    CountingSort(vector<int> list);
-    vector<int> getList();
-    void sort();
+    void sort(vector<int> list) override;
 };
-
-void counting_sort(vector<int> list);
 
 #endif
