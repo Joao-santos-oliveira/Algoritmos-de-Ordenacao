@@ -2,13 +2,11 @@
 #include <algorithm>
 
 #include "radix.hpp"
+#include <iostream>
 
 using namespace std;
 
-RadixSort::RadixSort(vector<int>& list)
-    : list(list) {}
-
-int RadixSort::getMaxValue() const {
+int RadixSort::getMaxValue(const vector<int>& list) const {
 
     int maxValue = list[0];
 
@@ -22,17 +20,16 @@ int RadixSort::getMaxValue() const {
     return maxValue;
 }
 
-void RadixSort::sort() {
+void RadixSort::sort(vector<int> list) {
 
     if (list.empty()) {
         return;
     }
-
-    int maxValue = getMaxValue();
+    int maxValue = getMaxValue(list);
 
     vector<int> auxiliaryList(list.size());
 
-    vector<int> count(10);
+    vector<int> count(10, 0);
 
     int exponent = 1;
 
@@ -61,18 +58,8 @@ void RadixSort::sort() {
             count[digit]--;
         }
 
-        for (size_t i = 0; i < list.size(); i++) {
-
-            list[i] = auxiliaryList[i];
-        }
+        list = auxiliaryList;
 
         exponent *= 10;
     }
-}
-
-void radix_sort(vector<int>& list) {
-
-    RadixSort sorter(list);
-
-    sorter.sort();
 }

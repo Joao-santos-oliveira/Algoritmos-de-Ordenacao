@@ -28,6 +28,15 @@ typedef struct {
     int quantidade_execucoes;
 } problema;
 
+class MetodoOrdenacao {
+    protected:
+        string nome_algoritmo;
+
+    public:
+        //Metodo sobrescrito por cada algoritmo de ordenação
+        virtual void sort(vector<int> list) = 0;
+};
+
 void ler_input(problema* prob, string filename);
 
 string obter_nome_input(int input, string nome_input);

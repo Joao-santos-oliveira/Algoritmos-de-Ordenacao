@@ -5,14 +5,7 @@
 
 using namespace std;
 
-CountingSort::CountingSort(vector<int>& list)
-    : list(list) {}
-
-vector<int> CountingSort::getList() {
-    return this->list;
-}
-
-int CountingSort::getMaxValor() const {
+int CountingSort::getMaxValor(const vector<int>& list) const {
 
     int maxValor = list[0];
 
@@ -26,14 +19,14 @@ int CountingSort::getMaxValor() const {
     return maxValor;
 }
 
-void CountingSort::buildVetorFrequencia(vector<int>& count, int maxValor) const {
+void CountingSort::buildVetorFrequencia(vector<int>& list, vector<int>& count, int maxValor) const {
 
     for (size_t i = 0; i < list.size(); i++) {
         count[list[i]]++;
     }
 }
 
-void CountingSort::rebuildSortedList(const vector<int>& count) {
+void CountingSort::rebuildSortedList(vector<int>& list, const vector<int>& count) {
 
     vector<int> frequencia = count;
 
@@ -52,24 +45,16 @@ void CountingSort::rebuildSortedList(const vector<int>& count) {
     }
 }
 
-void CountingSort::sort() {
-
+void CountingSort::sort(vector<int> list) {
     if (list.empty()) {
         return;
     }
 
-    int maxValor = getMaxValor();
+    int maxValor = getMaxValor(list);
 
     vector<int> count(maxValor + 1, 0);
 
-    buildVetorFrequencia(count, maxValor);
+    buildVetorFrequencia(list, count, maxValor);
 
-    rebuildSortedList(count);
-}
-
-void counting_sort(vector<int>& list) {
-
-    CountingSort sorter(list);
-
-    sorter.sort();
+    rebuildSortedList(list, count);
 }
