@@ -70,7 +70,7 @@ void RadixSort::sort() {
     }
 }
 
-void radix_sort(vector<int> list) {
+void radix_sort(vector<int>& list) {
 
     RadixSort sorter(list);
 

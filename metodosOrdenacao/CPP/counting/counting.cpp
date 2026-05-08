@@ -5,7 +5,7 @@
 
 using namespace std;
 
-CountingSort::CountingSort(vector<int> list)
+CountingSort::CountingSort(vector<int>& list)
     : list(list) {}
 
 vector<int> CountingSort::getList() {
@@ -67,7 +67,7 @@ void CountingSort::sort() {
     rebuildSortedList(count);
 }
 
-void counting_sort(vector<int> list) {
+void counting_sort(vector<int>& list) {
 
     CountingSort sorter(list);
 

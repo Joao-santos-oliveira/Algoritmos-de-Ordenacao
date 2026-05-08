@@ -16,6 +16,6 @@ public:
     void sort();
 };
 
-void radix_sort(std::vector<int> list);
+void radix_sort(std::vector<int>& list);
 
 #endif

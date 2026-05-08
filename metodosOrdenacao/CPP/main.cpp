@@ -24,7 +24,7 @@
 
 using namespace std;
 
-void executar_algoritmo(problema* prob, function<void(vector<int>)> func_algoritmo){
+void executar_algoritmo(problema* prob, function<void(vector<int>&)> func_algoritmo){
     vector<double> lista_tempos(prob->quantidade_execucoes);
 
     for(int i = 0; i < prob->quantidade_execucoes; i++){
@@ -52,7 +52,7 @@ int main(){
     switch (problema->algoritmo_usado) {
         case RADIX_SORT: executar_algoritmo(problema, radix_sort); break;
         case COUNTING_SORT: executar_algoritmo(problema, counting_sort); break;
-        case INTRO_SORT: executar_algoritmo(problema, intro_sort); break;
+        case INTRO_SORT: executar_algoritmo(problema, IntroSort); break;
         
         case TODOS:
             problema->algoritmo_usado = RADIX_SORT;
@@ -62,7 +62,7 @@ int main(){
             executar_algoritmo(problema, counting_sort);
 
             problema->algoritmo_usado = INTRO_SORT;
-            executar_algoritmo(problema, intro_sort);
+            executar_algoritmo(problema, IntroSort);
         break;
 
         default:
