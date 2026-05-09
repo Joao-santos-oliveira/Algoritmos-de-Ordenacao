@@ -1,0 +1,24 @@
+Linguagem: C++
+Algoritmo: introsort Sort
+Input: inputs/input3.dat
+Tempos de execução (em segundos):
+Execução 0: 0.001163501
+Execução 1: 0.001084583
+Execução 2: 0.001119426
+Execução 3: 0.001117799
+Execução 4: 0.001071831
+Execução 5: 0.001115598
+Execução 6: 0.001072352
+Execução 7: 0.001072544
+Execução 8: 0.001043220
+Execução 9: 0.001076224
+Execução 10: 0.001096602
+Execução 11: 0.001077734
+Execução 12: 0.001079903
+Execução 13: 0.001046528
+Execução 14: 0.001083519
+Execução 15: 0.001075192
+Execução 16: 0.001073458
+Execução 17: 0.001068577
+Execução 18: 0.001109158
+Execução 19: 0.001136423

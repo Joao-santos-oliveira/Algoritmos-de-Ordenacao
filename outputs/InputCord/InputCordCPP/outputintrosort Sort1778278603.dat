@@ -1,0 +1,24 @@
+Linguagem: C++
+Algoritmo: introsort Sort
+Input: inputs/input6_cord.dat
+Tempos de execução (em segundos):
+Execução 0: 0.761440427
+Execução 1: 0.737773969
+Execução 2: 0.745521227
+Execução 3: 0.734173972
+Execução 4: 0.827445535
+Execução 5: 0.752044415
+Execução 6: 0.739325906
+Execução 7: 0.737694673
+Execução 8: 0.733907317
+Execução 9: 0.738232047
+Execução 10: 0.734461484
+Execução 11: 0.734923625
+Execução 12: 0.741369931
+Execução 13: 0.729608449
+Execução 14: 0.738668186
+Execução 15: 0.759328702
+Execução 16: 0.738809992
+Execução 17: 0.744605584
+Execução 18: 0.733183255
+Execução 19: 0.736935827

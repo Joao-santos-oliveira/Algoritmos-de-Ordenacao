@@ -30,11 +30,11 @@ void executar_algoritmo(problema* prob, MetodoOrdenacao* func_algoritmo){
     for(int i = 0; i < prob->quantidade_execucoes; i++){
         if (EXIBIR_INFORMAÇÕES) cout << "\nExecução " <<  i + 1 << " em andamento..." << endl;
         
-        auto start = chrono::high_resolution_clock::now();
+        auto start = chrono::steady_clock::now();
         func_algoritmo->sort(prob->lista);
-        auto end = chrono::high_resolution_clock::now();
+        auto end = chrono::steady_clock::now();
 
-        auto duracao = chrono::duration_cast<chrono::milliseconds>(end - start)/1000.0;
+        chrono::duration<double> duracao = end - start;
         lista_tempos[i] = duracao.count();
         
         if (EXIBIR_INFORMAÇÕES) cout << "Execução "<< i + 1 <<" concluída. Tempo gasto: "<< lista_tempos[i] << " segundos." << endl;
