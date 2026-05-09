@@ -29,14 +29,12 @@ BIN_GO      = $(DIR_OUT)/main_go$(EXT)
 BIN_HS      = $(DIR_OUT)/HASKELL$(EXT)
 BIN_RS      = $(DIR_OUT)/main_rs$(EXT)
 
-# ─── Timestamp ──────────────────────────────────────────────────────────────
-TIMESTAMP := $(shell date +%Y%m%d_%H%M%S)_$(shell echo $$RANDOM)
-
 # ─── Repetição ───────────────────────────────────────────────────────────────
 TIMES ?= 1
 
 define run_times
 	@for i in $(shell seq 1 $(TIMES)); do \
+		TS=$$(date +%Y%m%d_%H%M%S)_$$(cat /proc/sys/kernel/random/uuid | cut -c1-8); \
 		echo "── Execução $$i de $(TIMES) ──"; \
 		$(1); \
 	done
@@ -62,9 +60,8 @@ c_run:
 
 c_benchmark:
 	@test -f $(BIN_C) || (echo "⚠ Binário não encontrado, compilando..." && $(MAKE) c)
-	@echo "── Benchmark C ──"
-	$(call run_times, /usr/bin/time -v ./$(BIN_C) 2>$(DIR_BENCH)/benchmark_c_$(TIMESTAMP).txt; \
-	 grep -E "Maximum resident|wall clock" $(DIR_BENCH)/benchmark_c_$(TIMESTAMP).txt)
+	@$(MKDIR) $(DIR_BENCH)
+	$(call run_times, /usr/bin/time -v ./$(BIN_C) 2>$(DIR_BENCH)/benchmark_c_$$TS.txt && grep -E "Maximum resident|wall clock" $(DIR_BENCH)/benchmark_c_$$TS.txt)
 
 # ─── C++ ─────────────────────────────────────────────────────────────────────
 cpp:
@@ -86,9 +83,8 @@ cpp_run:
 
 cpp_benchmark:
 	@test -f $(BIN_CPP) || (echo "⚠ Binário não encontrado, compilando..." && $(MAKE) cpp)
-	@echo "── Benchmark C++ ──"
-	$(call run_times, /usr/bin/time -v ./$(BIN_CPP) 2>$(DIR_BENCH)/benchmark_cpp_$(TIMESTAMP).txt; \
-	 grep -E "Maximum resident|wall clock" $(DIR_BENCH)/benchmark_cpp_$(TIMESTAMP).txt)
+	@$(MKDIR) $(DIR_BENCH)
+	$(call run_times, /usr/bin/time -v ./$(BIN_CPP) 2>$(DIR_BENCH)/benchmark_cpp_$$TS.txt && grep -E "Maximum resident|wall clock" $(DIR_BENCH)/benchmark_cpp_$$TS.txt)
 
 # ─── GO ──────────────────────────────────────────────────────────────────────
 go:
@@ -102,9 +98,8 @@ go_run:
 
 go_benchmark:
 	@test -f $(BIN_GO) || (echo "⚠ Binário não encontrado, compilando..." && $(MAKE) go)
-	@echo "── Benchmark Go ──"
-	$(call run_times, /usr/bin/time -v ./$(BIN_GO) 2>$(DIR_BENCH)/benchmark_go_$(TIMESTAMP).txt; \
-	 grep -E "Maximum resident|wall clock" $(DIR_BENCH)/benchmark_go_$(TIMESTAMP).txt)
+	@$(MKDIR) $(DIR_BENCH)
+	$(call run_times, /usr/bin/time -v ./$(BIN_GO) 2>$(DIR_BENCH)/benchmark_go_$$TS.txt && grep -E "Maximum resident|wall clock" $(DIR_BENCH)/benchmark_go_$$TS.txt)
 
 # ─── HASKELL ─────────────────────────────────────────────────────────────────
 hs:
@@ -118,9 +113,8 @@ hs_run:
 
 hs_benchmark:
 	@test -f $(BIN_HS) || (echo "⚠ Binário não encontrado, compilando..." && $(MAKE) hs)
-	@echo "── Benchmark Haskell ──"
-	$(call run_times, ./$(BIN_HS) +RTS -s 2>$(DIR_BENCH)/benchmark_hs_$(TIMESTAMP).txt; \
-	 grep -E "total memory in use|Productivity|elapsed" $(DIR_BENCH)/benchmark_hs_$(TIMESTAMP).txt)
+	@$(MKDIR) $(DIR_BENCH)
+	$(call run_times, ./$(BIN_HS) +RTS -s 2>$(DIR_BENCH)/benchmark_hs_$$TS.txt && grep -E "total memory in use|Productivity|elapsed" $(DIR_BENCH)/benchmark_hs_$$TS.txt)
 
 # ─── RUST ────────────────────────────────────────────────────────────────────
 rs:
@@ -135,9 +129,8 @@ rs_run:
 
 rs_benchmark:
 	@test -f $(BIN_RS) || (echo "⚠ Binário não encontrado, compilando..." && $(MAKE) rs)
-	@echo "── Benchmark Rust ──"
-	$(call run_times, /usr/bin/time -v ./$(BIN_RS) 2>$(DIR_BENCH)/benchmark_rs_$(TIMESTAMP).txt; \
-	 grep -E "Maximum resident|wall clock" $(DIR_BENCH)/benchmark_rs_$(TIMESTAMP).txt)
+	@$(MKDIR) $(DIR_BENCH)
+	$(call run_times, /usr/bin/time -v ./$(BIN_RS) 2>$(DIR_BENCH)/benchmark_rs_$$TS.txt && grep -E "Maximum resident|wall clock" $(DIR_BENCH)/benchmark_rs_$$TS.txt)
 
 # ─── Todos ───────────────────────────────────────────────────────────────────
 all: c cpp go hs rs
