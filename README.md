@@ -310,10 +310,6 @@ Algoritmos-de-Ordenacao/
     ├── memoria_graficos/
     │    └── [estrutura similar aos tempo_graficos/]
     └── banner.png                      # Banner para README e apresentações
-
-
-Trabalho/                               # Documentação acadêmica adicional
-└── Códigos/                            # Cópias/variações de código
 ```
 
 ### Estatísticas da Estrutura
