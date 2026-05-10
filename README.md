@@ -1,3 +1,5 @@
+<img src="comparacoes/banner.png" alt="Banner" style="width:100%;"/>
+
 # Análise Comparativa de Algoritmos de Ordenação Não-Comparativos e Híbridos em Múltiplos Paradigmas de Programação
 
 [![Linux](https://img.shields.io/badge/Platform-Linux-FCC624?logo=linux)](https://www.linux.org/)
@@ -305,8 +307,10 @@ Algoritmos-de-Ordenacao/
     │   ├── tempo_[algoritmo].png      # 3 gráficos (Radix, Counting, Introsort)
     │   ├── tempo_[linguagem].png      # 5 gráficos (C, C++, Go, Haskell, Rust)
     │   └── tempo_benchmarks.csv
-    └── memoria_graficos/
-        └── [estrutura similar aos tempo_graficos/]
+    ├── memoria_graficos/
+    │    └── [estrutura similar aos tempo_graficos/]
+    └── banner.png                      # Banner para README e apresentações
+
 
 Trabalho/                               # Documentação acadêmica adicional
 └── Códigos/                            # Cópias/variações de código
@@ -421,7 +425,7 @@ python inputs/inputorder.py
 
 **Tempo**:
 - Tempos de wall-clock **por execução** (múltiplas para média e desvio)
-- Implementações executam **10-20 vezes** por dataset, tempo = média
+- Implementações executam **20 vezes** por dataset, tempo = média
 
 **Memória**:
 - Pico de RSS (Resident Set Size) durante execução
@@ -622,7 +626,10 @@ random.seed(42)                # reprodutibilidade absoluta
 ```
 <tamanho>
 
-<valor1>,<valor2>,...,<valorN>
+<valor1>
+<valor2>
+...
+<valorN>
 ```
 
 Uso:
