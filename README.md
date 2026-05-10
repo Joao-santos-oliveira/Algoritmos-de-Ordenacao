@@ -209,10 +209,10 @@ introsort(arr, início, fim, profundidade_limite):
 | **Caso Médio** | $\mathcal{O}(n+k)$ | $\mathcal{O}(dn)$ | $\mathcal{O}(n\log n)$ |
 | **Pior Caso** | $\mathcal{O}(n+k)$ | $\mathcal{O}(dn)$ | $\mathcal{O}(n\log n)$ |
 | **Espaço** | $\mathcal{O}(n+k)$ | $\mathcal{O}(n+r)$ | $\mathcal{O}(\log n)$ |
-| **Estável** | ✅ Sim | ✅ Sim | ❌ Não |
-| **In-place** | ❌ Não | ❌ Não | ✅ Sim |
-| **Adapt. Crescente** | ❌ Não | ❌ Não | ✅ Sim |
-| **Adapt. Decrescente** | ❌ Não | ❌ Não | ✅ Parcial |
+| **Estável** |  Sim |  Sim |  Não |
+| **In-place** |  Não |  Não |  Sim |
+| **Adapt. Crescente** |  Não |  Não |  Sim |
+| **Adapt. Decrescente** |  Não |  Não |  Parcial |
 | **Quando Usar** | $k \ll n$, estabilidade crítica | $d$ pequeno, $k > n$ | Dados arbitrários, pior caso crítico |
 
 ---
