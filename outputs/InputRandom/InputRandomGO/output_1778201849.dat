@@ -1,0 +1,23 @@
+Linguagem: GO
+Algoritmo: Counting Sort
+Input: inputs/input3.dat
+Execução 1: 0.000162
+Execução 2: 0.000225
+Execução 3: 0.000173
+Execução 4: 0.000158
+Execução 5: 0.000177
+Execução 6: 0.000171
+Execução 7: 0.000163
+Execução 8: 0.000167
+Execução 9: 0.000161
+Execução 10: 0.000163
+Execução 11: 0.000169
+Execução 12: 0.000166
+Execução 13: 0.000163
+Execução 14: 0.000169
+Execução 15: 0.000166
+Execução 16: 0.000233
+Execução 17: 0.000160
+Execução 18: 0.000211
+Execução 19: 0.000169
+Execução 20: 0.001731

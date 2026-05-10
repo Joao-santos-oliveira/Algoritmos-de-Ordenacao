@@ -1,0 +1,23 @@
+Linguagem: GO
+Algoritmo: Radix Sort
+Input: inputs/input6_dord.dat
+Execução 1: 0.564214
+Execução 2: 0.560715
+Execução 3: 0.486911
+Execução 4: 0.577169
+Execução 5: 0.592781
+Execução 6: 0.487007
+Execução 7: 0.488644
+Execução 8: 0.486873
+Execução 9: 0.483984
+Execução 10: 0.484642
+Execução 11: 0.486283
+Execução 12: 0.484513
+Execução 13: 0.486587
+Execução 14: 0.487052
+Execução 15: 0.482452
+Execução 16: 0.487216
+Execução 17: 0.492296
+Execução 18: 0.484019
+Execução 19: 0.484621
+Execução 20: 0.486927

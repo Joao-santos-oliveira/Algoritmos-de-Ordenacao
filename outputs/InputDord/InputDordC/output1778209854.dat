@@ -1,0 +1,24 @@
+Linguagem: C
+Algoritmo: introsort Sort
+Input: inputs/input5_dord.dat
+Tempos de execução (em segundos):
+Execução 1: 0.272343
+Execução 2: 0.271697
+Execução 3: 0.273738
+Execução 4: 0.272691
+Execução 5: 0.271636
+Execução 6: 0.272564
+Execução 7: 0.277009
+Execução 8: 0.275475
+Execução 9: 0.272550
+Execução 10: 0.276333
+Execução 11: 0.273784
+Execução 12: 0.274907
+Execução 13: 0.271664
+Execução 14: 0.274512
+Execução 15: 0.274178
+Execução 16: 0.273588
+Execução 17: 0.272215
+Execução 18: 0.273295
+Execução 19: 0.274554
+Execução 20: 0.273280

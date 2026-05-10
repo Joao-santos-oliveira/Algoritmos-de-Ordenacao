@@ -1,0 +1,24 @@
+Linguagem: RUST
+Algoritmo: Radix Sort
+Input: inputs/input5_cord.dat
+Tempos de execução (em segundos):
+Execução 0: 0.064160971
+Execução 1: 0.055814487
+Execução 2: 0.055692059
+Execução 3: 0.056131214
+Execução 4: 0.055128566
+Execução 5: 0.05517616
+Execução 6: 0.05553272
+Execução 7: 0.055226797
+Execução 8: 0.055896963
+Execução 9: 0.056062695
+Execução 10: 0.055649474
+Execução 11: 0.055396069
+Execução 12: 0.056531922
+Execução 13: 0.056443097
+Execução 14: 0.055276743
+Execução 15: 0.055863695
+Execução 16: 0.055237267
+Execução 17: 0.055759674
+Execução 18: 0.055223228
+Execução 19: 0.056619093

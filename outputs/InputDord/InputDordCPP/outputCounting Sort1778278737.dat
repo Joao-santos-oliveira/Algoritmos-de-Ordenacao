@@ -1,0 +1,24 @@
+Linguagem: C++
+Algoritmo: Counting Sort
+Input: inputs/input1_dord.dat
+Tempos de execução (em segundos):
+Execução 0: 0.000117514
+Execução 1: 0.000041861
+Execução 2: 0.000041691
+Execução 3: 0.000041638
+Execução 4: 0.000041606
+Execução 5: 0.000041648
+Execução 6: 0.000041637
+Execução 7: 0.000041616
+Execução 8: 0.000041606
+Execução 9: 0.000041585
+Execução 10: 0.000041595
+Execução 11: 0.000041606
+Execução 12: 0.000041585
+Execução 13: 0.000041616
+Execução 14: 0.000041596
+Execução 15: 0.000057827
+Execução 16: 0.000045146
+Execução 17: 0.000042105
+Execução 18: 0.000042126
+Execução 19: 0.000042116

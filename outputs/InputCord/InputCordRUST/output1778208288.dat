@@ -1,0 +1,24 @@
+Linguagem: RUST
+Algoritmo: introsort Sort
+Input: inputs/input3_cord.dat
+Tempos de execução (em segundos):
+Execução 0: 0.000220709
+Execução 1: 0.000101486
+Execução 2: 0.000101269
+Execução 3: 0.00010117
+Execução 4: 0.000101203
+Execução 5: 0.000101225
+Execução 6: 0.00010116
+Execução 7: 0.000101247
+Execução 8: 0.000101377
+Execução 9: 0.000101475
+Execução 10: 0.000101182
+Execução 11: 0.000101138
+Execução 12: 0.000108433
+Execução 13: 0.000101399
+Execução 14: 0.000101247
+Execução 15: 0.000101225
+Execução 16: 0.000101182
+Execução 17: 0.000101323
+Execução 18: 0.00010383
+Execução 19: 0.000101746

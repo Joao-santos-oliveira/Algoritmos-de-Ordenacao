@@ -1,0 +1,24 @@
+Linguagem: C
+Algoritmo: Radix Sort
+Input: inputs/input3_dord.dat
+Tempos de execução (em segundos):
+Execução 1: 0.000600
+Execução 2: 0.000566
+Execução 3: 0.000575
+Execução 4: 0.000615
+Execução 5: 0.000616
+Execução 6: 0.000683
+Execução 7: 0.000688
+Execução 8: 0.000646
+Execução 9: 0.000673
+Execução 10: 0.000769
+Execução 11: 0.000714
+Execução 12: 0.000716
+Execução 13: 0.000590
+Execução 14: 0.000594
+Execução 15: 0.000559
+Execução 16: 0.000613
+Execução 17: 0.000564
+Execução 18: 0.000586
+Execução 19: 0.000565
+Execução 20: 0.000561

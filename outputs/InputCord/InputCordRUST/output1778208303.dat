@@ -1,0 +1,24 @@
+Linguagem: RUST
+Algoritmo: Counting Sort
+Input: inputs/input4_cord.dat
+Tempos de execução (em segundos):
+Execução 0: 0.001152301
+Execução 1: 0.000920242
+Execução 2: 0.000873382
+Execução 3: 0.00092982
+Execução 4: 0.000901265
+Execução 5: 0.000863529
+Execução 6: 0.000920904
+Execução 7: 0.001149287
+Execução 8: 0.001040493
+Execução 9: 0.000884027
+Execução 10: 0.000923394
+Execução 11: 0.000869348
+Execução 12: 0.000864774
+Execução 13: 0.000893473
+Execução 14: 0.000890045
+Execução 15: 0.000872643
+Execução 16: 0.00087498
+Execução 17: 0.000866725
+Execução 18: 0.000924067
+Execução 19: 0.000882694

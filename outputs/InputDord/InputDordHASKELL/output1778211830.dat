@@ -1,0 +1,24 @@
+Linguagem: Haskell
+Algoritmo: Counting Sort
+Input: inputs/input3_dord.dat
+Tempos de execução (em segundos):
+Execução 1: 5.87826e-4
+Execução 2: 6.47097e-4
+Execução 3: 5.99899e-4
+Execução 4: 1.345058e-3
+Execução 5: 2.48794e-4
+Execução 6: 3.50183e-4
+Execução 7: 3.25416e-4
+Execução 8: 3.53379e-4
+Execução 9: 2.86774e-4
+Execução 10: 3.34504e-4
+Execução 11: 3.01182e-4
+Execução 12: 3.71072e-4
+Execução 13: 6.05339e-4
+Execução 14: 4.15926e-4
+Execução 15: 3.13534e-4
+Execução 16: 4.68423e-4
+Execução 17: 3.13364e-4
+Execução 18: 3.99225e-4
+Execução 19: 2.98055e-4
+Execução 20: 2.93537e-4

@@ -1,0 +1,24 @@
+Linguagem: C
+Algoritmo: Radix Sort
+Input: inputs/input4_cord.dat
+Tempos de execução (em segundos):
+Execução 1: 0.006228
+Execução 2: 0.006091
+Execução 3: 0.005826
+Execução 4: 0.005883
+Execução 5: 0.005819
+Execução 6: 0.005813
+Execução 7: 0.005860
+Execução 8: 0.005999
+Execução 9: 0.005857
+Execução 10: 0.005805
+Execução 11: 0.005832
+Execução 12: 0.005819
+Execução 13: 0.005841
+Execução 14: 0.005914
+Execução 15: 0.005716
+Execução 16: 0.005661
+Execução 17: 0.005901
+Execução 18: 0.005800
+Execução 19: 0.006252
+Execução 20: 0.005973

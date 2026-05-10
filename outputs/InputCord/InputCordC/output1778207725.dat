@@ -1,0 +1,24 @@
+Linguagem: C
+Algoritmo: introsort Sort
+Input: inputs/input2_cord.dat
+Tempos de execução (em segundos):
+Execução 1: 0.000156
+Execução 2: 0.000141
+Execução 3: 0.000141
+Execução 4: 0.000138
+Execução 5: 0.000136
+Execução 6: 0.000136
+Execução 7: 0.000161
+Execução 8: 0.000137
+Execução 9: 0.000205
+Execução 10: 0.000136
+Execução 11: 0.000136
+Execução 12: 0.000135
+Execução 13: 0.000136
+Execução 14: 0.000136
+Execução 15: 0.000136
+Execução 16: 0.000137
+Execução 17: 0.000136
+Execução 18: 0.000135
+Execução 19: 0.000134
+Execução 20: 0.000135

@@ -1,0 +1,24 @@
+Linguagem: Haskell
+Algoritmo: Counting Sort
+Input: inputs/input4_cord.dat
+Tempos de execução (em segundos):
+Execução 1: 7.067603e-3
+Execução 2: 1.1563076e-2
+Execução 3: 4.098292e-3
+Execução 4: 4.40375e-3
+Execução 5: 4.026534e-3
+Execução 6: 3.852017e-3
+Execução 7: 6.281375e-3
+Execução 8: 4.035649e-3
+Execução 9: 4.02509e-3
+Execução 10: 3.989184e-3
+Execução 11: 4.26909e-3
+Execução 12: 4.641318e-3
+Execução 13: 4.755265e-3
+Execução 14: 8.488788e-3
+Execução 15: 4.633438e-3
+Execução 16: 4.535396e-3
+Execução 17: 4.054406e-3
+Execução 18: 4.747815e-3
+Execução 19: 4.636745e-3
+Execução 20: 4.734535e-3

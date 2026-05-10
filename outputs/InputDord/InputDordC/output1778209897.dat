@@ -1,0 +1,24 @@
+Linguagem: C
+Algoritmo: Counting Sort
+Input: inputs/input6_dord.dat
+Tempos de execução (em segundos):
+Execução 1: 0.154263
+Execução 2: 0.135315
+Execução 3: 0.133318
+Execução 4: 0.133733
+Execução 5: 0.138490
+Execução 6: 0.135904
+Execução 7: 0.141735
+Execução 8: 0.133885
+Execução 9: 0.134659
+Execução 10: 0.133187
+Execução 11: 0.134786
+Execução 12: 0.133380
+Execução 13: 0.139799
+Execução 14: 0.137150
+Execução 15: 0.171823
+Execução 16: 0.155912
+Execução 17: 0.141582
+Execução 18: 0.141675
+Execução 19: 0.143266
+Execução 20: 0.140446

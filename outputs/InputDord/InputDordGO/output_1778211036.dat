@@ -1,0 +1,23 @@
+Linguagem: GO
+Algoritmo: Counting Sort
+Input: inputs/input6_dord.dat
+Execução 1: 0.165426
+Execução 2: 0.164227
+Execução 3: 0.081154
+Execução 4: 0.161371
+Execução 5: 0.160407
+Execução 6: 0.077539
+Execução 7: 0.077359
+Execução 8: 0.078640
+Execução 9: 0.077878
+Execução 10: 0.077355
+Execução 11: 0.077367
+Execução 12: 0.077643
+Execução 13: 0.076201
+Execução 14: 0.077512
+Execução 15: 0.076581
+Execução 16: 0.077056
+Execução 17: 0.076949
+Execução 18: 0.076865
+Execução 19: 0.076043
+Execução 20: 0.077908
