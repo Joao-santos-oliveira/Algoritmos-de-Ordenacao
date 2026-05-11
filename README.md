@@ -205,7 +205,7 @@ introsort(arr, início, fim, profundidade_limite):
 | Característica | Counting Sort | Radix Sort | Introsort |
 |:---|:---:|:---:|:---:|
 | **Tipo** | Não-comparativo | Não-comparativo | Comparativo/Híbrido |
-| **Melhor Caso** | $\mathcal{O}(n+k)$ | $\mathcal{O}(dn)$ | $\mathcal{O}(n)$ (semi-ordenado) |
+| **Melhor Caso** | $\mathcal{O}(n+k)$ | $\mathcal{O}(dn)$ | $\mathcal{O}(n\log n)$ |
 | **Caso Médio** | $\mathcal{O}(n+k)$ | $\mathcal{O}(dn)$ | $\mathcal{O}(n\log n)$ |
 | **Pior Caso** | $\mathcal{O}(n+k)$ | $\mathcal{O}(dn)$ | $\mathcal{O}(n\log n)$ |
 | **Espaço** | $\mathcal{O}(n+k)$ | $\mathcal{O}(n+r)$ | $\mathcal{O}(\log n)$ |
@@ -997,5 +997,5 @@ Recurso reutilizável para:
 
 
 **Última Atualização**: 9 de maio de 2026  
-**Status**: ✅ Análise Completa e Documentação Finalizada
+**Status**:  Análise Completa e Documentação Finalizada
 
